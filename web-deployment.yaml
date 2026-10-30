@@ -6,7 +6,6 @@ metadata:
     name: synergychat-web
     namespace: default
 spec:
-    replicas: 3
     revisionHistoryLimit: 10
     selector:
         matchLabels:
@@ -28,3 +27,6 @@ spec:
                   envFrom:
                       - configMapRef:
                             name: web-configmap
+                  resources:
+                      limits:
+                          cpu: 50m
